@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/hh-actor-profile/edit.js"
-/*!**************************************!*\
-  !*** ./src/hh-actor-profile/edit.js ***!
-  \**************************************/
+/***/ "./src/blocks/hh-actor-profile/edit.js"
+/*!*********************************************!*\
+  !*** ./src/blocks/hh-actor-profile/edit.js ***!
+  \*********************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16,7 +16,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/hh-actor-profile/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/hh-actor-profile/editor.scss");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 /**
@@ -60,19 +60,19 @@ function Edit() {
 
 /***/ },
 
-/***/ "./src/hh-actor-profile/index.js"
-/*!***************************************!*\
-  !*** ./src/hh-actor-profile/index.js ***!
-  \***************************************/
+/***/ "./src/blocks/hh-actor-profile/index.js"
+/*!**********************************************!*\
+  !*** ./src/blocks/hh-actor-profile/index.js ***!
+  \**********************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/hh-actor-profile/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/hh-actor-profile/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/hh-actor-profile/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/hh-actor-profile/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/hh-actor-profile/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/blocks/hh-actor-profile/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/blocks/hh-actor-profile/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/hh-actor-profile/block.json");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -114,10 +114,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
-/***/ "./src/hh-actor-profile/save.js"
-/*!**************************************!*\
-  !*** ./src/hh-actor-profile/save.js ***!
-  \**************************************/
+/***/ "./src/blocks/hh-actor-profile/save.js"
+/*!*********************************************!*\
+  !*** ./src/blocks/hh-actor-profile/save.js ***!
+  \*********************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -155,10 +155,10 @@ function save() {
 
 /***/ },
 
-/***/ "./src/hh-actor-profile/editor.scss"
-/*!******************************************!*\
-  !*** ./src/hh-actor-profile/editor.scss ***!
-  \******************************************/
+/***/ "./src/blocks/hh-actor-profile/editor.scss"
+/*!*************************************************!*\
+  !*** ./src/blocks/hh-actor-profile/editor.scss ***!
+  \*************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -167,10 +167,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ },
 
-/***/ "./src/hh-actor-profile/style.scss"
-/*!*****************************************!*\
-  !*** ./src/hh-actor-profile/style.scss ***!
-  \*****************************************/
+/***/ "./src/blocks/hh-actor-profile/style.scss"
+/*!************************************************!*\
+  !*** ./src/blocks/hh-actor-profile/style.scss ***!
+  \************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -219,13 +219,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ },
 
-/***/ "./src/hh-actor-profile/block.json"
-/*!*****************************************!*\
-  !*** ./src/hh-actor-profile/block.json ***!
-  \*****************************************/
+/***/ "./src/blocks/hh-actor-profile/block.json"
+/*!************************************************!*\
+  !*** ./src/blocks/hh-actor-profile/block.json ***!
+  \************************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"hh/hh-actor-profile","version":"0.1.0","title":"Actor Profile Card","category":"design","icon":"id","description":"Display an actor profile with headshot, bio, and key details.","example":{},"supports":{"html":false},"textdomain":"hh-actor-profile","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"hh/hh-actor-profile","version":"0.1.0","title":"Actor Profile Card","category":"design","icon":"id","description":"Display an actor profile with headshot, bio, and key details.","keywords":["stagesharehub"],"example":{},"supports":{"html":false},"textdomain":"hh-actor-profile","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }
 
@@ -345,8 +345,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"hh-actor-profile/index": 0,
-/******/ 			"hh-actor-profile/style-index": 0
+/******/ 			"blocks/hh-actor-profile/index": 0,
+/******/ 			"blocks/hh-actor-profile/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -396,7 +396,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["hh-actor-profile/style-index"], () => (__webpack_require__("./src/hh-actor-profile/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/hh-actor-profile/style-index"], () => (__webpack_require__("./src/blocks/hh-actor-profile/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

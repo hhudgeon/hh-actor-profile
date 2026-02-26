@@ -7,6 +7,9 @@
   "category": "design",
   "icon": "id",
   "description": "Display an actor profile with headshot, bio, and key details.",
+  "keywords": [
+    "stagesharehub"
+  ],
   "example": {},
   "supports": {
     "html": false

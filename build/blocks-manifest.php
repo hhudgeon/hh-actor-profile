@@ -10,6 +10,9 @@ return array(
 		'category' => 'design',
 		'icon' => 'id',
 		'description' => 'Display an actor profile with headshot, bio, and key details.',
+		'keywords' => array(
+			'stagesharehub'
+		),
 		'example' => array(
 			
 		),
