@@ -16,8 +16,9 @@
 		"env": "wp-env"
 	},
 	"dependencies": {
-		"@wordpress/block-editor": "latest",
+		"@wordpress/block-editor": "^15.13.1",
 		"@wordpress/blocks": "latest",
+		"@wordpress/components": "^32.2.0",
 		"@wordpress/i18n": "latest"
 	},
 	"devDependencies": {

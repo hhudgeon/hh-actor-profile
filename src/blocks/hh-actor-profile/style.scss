@@ -1,12 +1,34 @@
+@import "/src/scss/variables";
+
 /**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
+ * Front-end (and editor) styles for the Actor Profile block.
+ * Keep this as the "base card" styling; add nested classes later
+ * when the Edit UI introduces image/name/chips/badges.
  */
 
 .wp-block-hh-hh-actor-profile {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+	border: 1px solid $ssh-border;
+	border-top: 6px solid $ssh-wine;
+	background: $ssh-bg;
+	color: $ssh-ink;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.actor-photo {
+	width: 150px;
+	height: 150px;
+	margin: 0 auto 1rem;
+	overflow: hidden;
+	border-radius: 999px;
+}
+
+.actor-photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
 }

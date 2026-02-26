@@ -11,14 +11,30 @@ import { useBlockProps } from '@wordpress/block-editor';
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
  *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#save
  *
  * @return {Element} Element to render.
  */
-export default function save() {
+export default function save( { attributes } ) {
+
+	const { actorName, skills, availability, imageURL } = attributes;
+
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Actor Profile Card – hello from the saved content!' }
-		</p>
+		<section { ...useBlockProps.save() }>
+			<div className="actor-header">
+				<div className="actor-photo">
+					<img
+						src={ imageURL }
+						alt="Actor headshot"
+					/>
+				</div>
+
+				<p className="actor-name">{ actorName }</p>
+			</div>
+
+			<div className="actor-skills">{ skills }</div>
+
+			<div className="actor-availability">{ availability }</div>
+		</section>
 	);
 }

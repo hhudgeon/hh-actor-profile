@@ -2,13 +2,32 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/hh-actor-profile/style.scss ***!
   \***************************************************************************************************************************************************************************************************************************************************************/
 /**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
+ * Front-end (and editor) styles for the Actor Profile block.
+ * Keep this as the "base card" styling; add nested classes later
+ * when the Edit UI introduces image/name/chips/badges.
  */
 .wp-block-hh-hh-actor-profile {
-  background-color: #21759b;
-  color: #fff;
-  padding: 2px;
+  border: 1px solid rgba(27, 25, 23, 0.12);
+  border-top: 6px solid #6C282A;
+  background: #FCFCFC;
+  color: #1B1917;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+.actor-photo {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem;
+  overflow: hidden;
+  border-radius: 999px;
+}
+.actor-photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
 }
