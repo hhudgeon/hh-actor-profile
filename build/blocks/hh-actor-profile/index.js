@@ -29,12 +29,61 @@ function BlockSettings({
   setAttributes
 }) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-      title: "Basic",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      title: "Actor Card Settings",
       initialOpen: true,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
-        children: "Starter Demo!"
-      })
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+          label: "Layout",
+          value: attributes.layoutClass,
+          onChange: layoutClass => setAttributes({
+            layoutClass
+          }),
+          options: [{
+            value: "",
+            label: "Default (Image Top)"
+          }, {
+            value: "actor-card--layout-left",
+            label: "Image Left"
+          }]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
+        children: "Border Color"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
+          colors: [{
+            name: "Wine",
+            color: "#722f37"
+          }, {
+            name: "Blue",
+            color: "#1e40af"
+          }, {
+            name: "Black",
+            color: "#111827"
+          }],
+          value: attributes.borderColor,
+          onChange: borderColor => setAttributes({
+            borderColor
+          }),
+          disableCustomColors: true
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: "Show Skills",
+          checked: !!attributes.showSkills,
+          onChange: value => setAttributes({
+            showSkills: !!value
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelRow, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: "Show Availability",
+          checked: !!attributes.showAvailability,
+          onChange: value => setAttributes({
+            showAvailability: !!value
+          })
+        })
+      })]
     })
   });
 }
@@ -94,6 +143,12 @@ function Edit({
     availability,
     imageURL
   } = attributes;
+  const cardStyles = {
+    borderTopColor: attributes.borderColor
+  };
+
+  // In case there is no image here is a placeholder
+  const finalImageURL = imageURL ? imageURL : 'https://placehold.co/150';
 
   // Image slot (no extra card/layout wrappers in here)
   const imageSlot = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
@@ -111,7 +166,7 @@ function Edit({
           open
         }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
-            src: imageURL,
+            src: finalImageURL,
             alt: "Actor headshot",
             onClick: open,
             style: {
@@ -178,8 +233,10 @@ function Edit({
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_ActorCard_ActorCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
       image: imageSlot,
       name: nameSlot,
-      skills: skillsSlot,
-      availability: availabilitySlot
+      skills: attributes.showSkills ? skillsSlot : null,
+      availability: attributes.showAvailability ? availabilitySlot : null,
+      className: attributes.layoutClass,
+      style: cardStyles
     })]
   });
 }
@@ -286,11 +343,20 @@ function save({
     actorName,
     skills,
     availability,
-    imageURL
+    imageURL,
+    layoutClass,
+    borderColor,
+    showSkills,
+    showAvailability
   } = attributes;
 
   // Tiny fallback so the image doesn't break if someone never picks one
   const finalImageURL = imageURL ? imageURL : 'https://placehold.co/150';
+
+  // Teacher-style inline styles variable
+  const cardStyles = {
+    borderTopColor: borderColor
+  };
   const imageSlot = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     className: "actor-photo",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
@@ -318,8 +384,10 @@ function save({
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_ActorCard_ActorCard__WEBPACK_IMPORTED_MODULE_1__["default"], {
       image: imageSlot,
       name: nameSlot,
-      skills: skillsSlot,
-      availability: availabilitySlot
+      skills: showSkills ? skillsSlot : null,
+      availability: showAvailability ? availabilitySlot : null,
+      className: layoutClass,
+      style: cardStyles
     })
   });
 }
@@ -348,10 +416,13 @@ function ActorCard({
   image,
   name,
   skills,
-  availability
+  availability,
+  className = '',
+  style = {}
 }) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "actor-card",
+    className: "actor-card " + className,
+    style: style,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "actor-card__image",
       children: image
@@ -465,7 +536,7 @@ module.exports = window["wp"]["components"];
   \************************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"hh/hh-actor-profile","version":"0.1.0","title":"Actor Profile Card","category":"design","icon":"id","description":"Display an actor profile with headshot, bio, and key details.","keywords":["stagesharehub"],"example":{},"supports":{"html":false},"textdomain":"hh-actor-profile","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"hh/hh-actor-profile","version":"0.1.0","title":"Actor Profile Card","category":"design","icon":"id","description":"Display an actor profile with headshot, bio, and key details.","keywords":["stagesharehub"],"example":{},"supports":{"html":false},"textdomain":"hh-actor-profile","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"actorName":{"type":"string","source":"text","selector":".actor-name"},"skills":{"type":"string","default":""},"availability":{"type":"string","source":"text","selector":".actor-availability"},"imageURL":{"type":"string","source":"attribute","selector":".actor-photo img","attribute":"src"},"layoutClass":{"type":"string","default":""},"borderColor":{"type":"string","default":"#722f37"},"showSkills":{"type":"boolean","default":true},"showAvailability":{"type":"boolean","default":true}}}');
 
 /***/ }
 

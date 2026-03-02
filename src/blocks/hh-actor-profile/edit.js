@@ -31,6 +31,13 @@ import BlockSettings from './BlockSettings';
 export default function Edit( { attributes, setAttributes } ) {
 	const { actorName, skills, availability, imageURL } = attributes;
 
+	const cardStyles = {
+		borderTopColor: attributes.borderColor
+	};
+
+	// In case there is no image here is a placeholder
+	const finalImageURL = imageURL ? imageURL : 'https://placehold.co/150';
+
 	// Image slot (no extra card/layout wrappers in here)
 	const imageSlot = (
 		<div className="actor-photo">
@@ -44,7 +51,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					render={ ( { open } ) => (
 						<>
 							<img
-								src={ imageURL }
+								src={ finalImageURL }
 								alt="Actor headshot"
 								onClick={ open }
 								style={ { cursor: 'pointer' } }
@@ -101,8 +108,10 @@ export default function Edit( { attributes, setAttributes } ) {
 			<ActorCard
 				image={ imageSlot }
 				name={ nameSlot }
-				skills={ skillsSlot }
-				availability={ availabilitySlot }
+				skills={ attributes.showSkills ? skillsSlot : null }
+				availability={ attributes.showAvailability ? availabilitySlot : null }
+				className={ attributes.layoutClass }
+				style={ cardStyles }
 			/>
 		</section>
 	);

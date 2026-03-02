@@ -22,10 +22,24 @@ import ActorCard from '../../components/ActorCard/ActorCard';
  * @return {Element} Element to render.
  */
 export default function save( { attributes } ) {
-	const { actorName, skills, availability, imageURL } = attributes;
+	const {
+		actorName,
+		skills,
+		availability,
+		imageURL,
+		layoutClass,
+		borderColor,
+		showSkills,
+		showAvailability,
+	} = attributes;
 
 	// Tiny fallback so the image doesn't break if someone never picks one
 	const finalImageURL = imageURL ? imageURL : 'https://placehold.co/150';
+
+	// Teacher-style inline styles variable
+	const cardStyles = {
+		borderTopColor: borderColor,
+	};
 
 	const imageSlot = (
 		<div className="actor-photo">
@@ -55,8 +69,10 @@ export default function save( { attributes } ) {
 			<ActorCard
 				image={ imageSlot }
 				name={ nameSlot }
-				skills={ skillsSlot }
-				availability={ availabilitySlot }
+				skills={ showSkills ? skillsSlot : null }
+				availability={ showAvailability ? availabilitySlot : null }
+				className={ layoutClass }
+				style={ cardStyles }
 			/>
 		</section>
 	);

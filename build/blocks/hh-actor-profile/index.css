@@ -86,4 +86,18 @@
   color: #555;
 }
 
+.actor-card--layout-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.actor-card--layout-left .actor-card__image {
+  flex: 0 0 150px;
+}
+
+.actor-card--layout-left .actor-card__content {
+  text-align: left;
+}
+
 /*# sourceMappingURL=index.css.map*/

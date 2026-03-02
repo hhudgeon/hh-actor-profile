@@ -28,3 +28,17 @@
 	font-size: 0.9rem;
 	color: #555;
 }
+
+.actor-card--layout-left {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	.actor-card__image {
+		flex: 0 0 150px;
+	}
+
+	.actor-card__content {
+		text-align: left;
+	}
+}

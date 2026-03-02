@@ -23,6 +23,44 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
+		'viewScript' => 'file:./view.js',
+		'attributes' => array(
+			'actorName' => array(
+				'type' => 'string',
+				'source' => 'text',
+				'selector' => '.actor-name'
+			),
+			'skills' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'availability' => array(
+				'type' => 'string',
+				'source' => 'text',
+				'selector' => '.actor-availability'
+			),
+			'imageURL' => array(
+				'type' => 'string',
+				'source' => 'attribute',
+				'selector' => '.actor-photo img',
+				'attribute' => 'src'
+			),
+			'layoutClass' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'borderColor' => array(
+				'type' => 'string',
+				'default' => '#722f37'
+			),
+			'showSkills' => array(
+				'type' => 'boolean',
+				'default' => true
+			),
+			'showAvailability' => array(
+				'type' => 'boolean',
+				'default' => true
+			)
+		)
 	)
 );

@@ -1,9 +1,9 @@
 import React from 'react';
 import './ActorCard.scss';
 
-export default function ActorCard( { image, name, skills, availability } ) {
+export default function ActorCard( { image, name, skills, availability, className = '', style = {} } ) {
 	return (
-		<div className="actor-card">
+		<div className={ "actor-card " + className } style={ style }>
 
 			<div className="actor-card__image">
 				{ image }
