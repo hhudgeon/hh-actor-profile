@@ -32,3 +32,20 @@
 	object-fit: cover;
 	display: block;
 }
+
+.actor-skills {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.4rem;
+}
+
+.actor-skill-pill {
+	background: #f5f2f0;
+	border: 1px solid #722f37;
+	color: #722f37;
+	padding: 0.2rem 0.6rem;
+	border-radius: 999px;
+	font-size: 0.85rem;
+	line-height: 1.2;
+}

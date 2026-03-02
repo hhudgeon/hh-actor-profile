@@ -32,7 +32,15 @@ export default function save( { attributes } ) {
 				<p className="actor-name">{ actorName }</p>
 			</div>
 
-			<div className="actor-skills">{ skills }</div>
+			<div className="actor-skills">
+				{skills &&
+					skills.split(',').map((skill, index) => (
+						<span key={index} className="actor-skill-pill">
+        {skill.trim()}
+      </span>
+					))
+				}
+			</div>
 
 			<div className="actor-availability">{ availability }</div>
 		</section>
