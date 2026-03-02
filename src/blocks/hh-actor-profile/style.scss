@@ -1,18 +1,19 @@
 @import "/src/scss/variables";
 
+/* NOTE TO SELF: pull ActorCard styles into the front-end bundle */
+@import "../../components/ActorCard/ActorCard";
+
 /**
- * Front-end (and editor) styles for the Actor Profile block.
- * Keep this as the "base card" styling; add nested classes later
- * when the Edit UI introduces image/name/chips/badges.
+ * Front-end styles for the Actor Profile block.
+ * NOTE TO SELF: The actual "card" UI now lives in ActorCard.scss,
+ * so this wrapper stays neutral to avoid the double-card look.
  */
 
 .wp-block-hh-hh-actor-profile {
-	border: 1px solid $ssh-border;
-	border-top: 6px solid $ssh-wine;
-	background: $ssh-bg;
-	color: $ssh-ink;
-	padding: 1rem;
-	border-radius: 0.5rem;
+	border: 0;
+	background: transparent;
+	padding: 0;
+	border-radius: 0;
 	max-width: 500px;
 	margin: 0 auto;
 	text-align: center;

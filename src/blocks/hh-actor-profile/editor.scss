@@ -1,16 +1,17 @@
 @import "/src/scss/variables";
 
 /**
- * The following styles get applied inside the editor only.
+ * Editor-only styles.
+ * NOTE TO SELF: the actual "card" look now lives in ActorCard.scss,
+ * so the block wrapper should stay neutral to avoid the double-card look.
  */
 
 .wp-block-hh-hh-actor-profile {
-	border: 1px solid $ssh-border;
-	border-top: 6px solid $ssh-wine;
-	background: $ssh-bg;
-	color: $ssh-ink;
-	padding: 1rem;
-	border-radius: 0.5rem;
+	/* wrapper = neutral (ActorCard handles the card UI) */
+	border: 0;
+	background: transparent;
+	padding: 0;
+	border-radius: 0;
 	max-width: 500px;
 	margin: 0 auto;
 	text-align: center;

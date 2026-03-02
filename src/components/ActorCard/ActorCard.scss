@@ -1,0 +1,30 @@
+.actor-card {
+	border: 1px solid #ddd;
+	border-top: 6px solid #722f37;
+	border-radius: 12px;
+	padding: 20px;
+	text-align: center;
+	background: #fff;
+}
+
+.actor-card__image img {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	margin-bottom: 15px;
+}
+
+.actor-card__name {
+	font-size: 1.4rem;
+	margin-bottom: 10px;
+}
+
+.actor-card__skills {
+	margin-bottom: 10px;
+}
+
+.actor-card__availability {
+	font-size: 0.9rem;
+	color: #555;
+}
