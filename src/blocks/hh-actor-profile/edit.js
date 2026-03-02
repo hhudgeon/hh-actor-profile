@@ -23,8 +23,10 @@ import { RadioControl, Button } from '@wordpress/components';
  */
 import './editor.scss';
 
-// Bringing in the reusable card layout we just made
+// Bringing in the reusable card layout
 import ActorCard from '../../components/ActorCard/ActorCard';
+
+import BlockSettings from './BlockSettings';
 
 export default function Edit( { attributes, setAttributes } ) {
 	const { actorName, skills, availability, imageURL } = attributes;
@@ -95,6 +97,7 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	return (
 		<section { ...useBlockProps() }>
+			<BlockSettings attributes={ attributes } setAttributes={ setAttributes } />
 			<ActorCard
 				image={ imageSlot }
 				name={ nameSlot }
