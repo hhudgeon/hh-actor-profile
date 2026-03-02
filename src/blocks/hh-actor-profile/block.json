@@ -16,5 +16,44 @@
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"viewScript": "file:./view.js"
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"actorName": {
+			"type": "string",
+			"source": "text",
+			"selector": ".actor-name"
+		},
+		"skills": {
+			"type": "string",
+			"default": ""
+		},
+		"availability": {
+			"type": "string",
+			"source": "text",
+			"selector": ".actor-availability"
+		},
+		"imageURL": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".actor-photo img",
+			"attribute": "src"
+		},
+
+		"layoutClass": {
+			"type": "string",
+			"default": ""
+		},
+		"borderColor": {
+			"type": "string",
+			"default": "#722f37"
+		},
+		"showSkills": {
+			"type": "boolean",
+			"default": true
+		},
+		"showAvailability": {
+			"type": "boolean",
+			"default": true
+		}
+	}
 }
